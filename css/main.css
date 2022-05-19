@@ -1,0 +1,162 @@
+:root {
+  --prussian-blue: #003049ff;
+  --maximum-red: #d62828ff;
+  --orange: #f77f00ff;
+  --maximum-yellow-red: #fcbf49ff;
+  --lemon-meringue: #eae2b7ff;
+  --primary-text-color: #003049ff;
+  --secondary-bg-color: #d62828;
+  --secondary-text-color: #f77f00ff;
+  --accent-color: #fcbf49ff;
+  --main-bg-color: #eae2b7ff;
+}
+
+html,
+body {
+  /* remove margins and scroll bars */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  /* style text */
+  text-align: center;
+  font-size: 12px;
+  font-family: Sans-Serif;
+
+  /* color text */
+  color: var(--primary-text-color);
+}
+
+/* Style the links inside the navigation bar */
+.btn {
+  color: var(--main-bg-color);
+  text-align: left;
+  padding-bottom: 5px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight:bold;
+  opacity: 0.5;
+  border-bottom: 2px solid var(--main-bg-color);
+  /* border-style: solid;
+  border-width:5px;
+  border-radius: 10px; */
+}
+
+/* Change the color of links on hover */
+.btn:hover {
+  opacity: 1;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.hoverbtn {
+  font-size: 12px;
+  font-weight:normal;
+  display: none;
+}
+
+.btn:hover .hoverbtn{
+  display: block;
+}
+
+#loading {
+  /* z-index: "10"; */
+  width:10%;
+  position: fixed;
+  top: 25%;
+  left: 45%;
+  /* background-color: #d62828; */
+}
+
+#msg-area {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 25%;
+  width: 60%;
+  color: var(--primary-text-color);
+  background-color: var(--main-bg-color);
+  text-align: left;
+  line-height: 1.6;
+  padding: 3%;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight:bold;
+  border: 2px solid var(--primary-text-color);
+}
+
+#homebtn {
+  position: fixed;
+  top: 50px;
+  left: 3%;
+}
+
+#nextbtn {
+  position: fixed;
+  top: 125px;
+  left: 3%;
+}
+
+#threebtn {
+  position: fixed;
+  top: 125px;
+  left: 3%;
+}
+
+#vrbtn {
+  position: fixed;
+  top: 200px;
+  left: 3%;
+}
+
+#arbtn {
+  position: fixed;
+  top: 275px;
+  left: 3%;
+}
+
+#storybtn {
+  position: fixed;
+  top: 350px;
+  left: 3%;
+}
+
+#aboutbtn {
+  position: fixed;
+  top: 425px;
+  left: 3%;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 780px) {
+  /* .btn {
+    position: fixed;
+    bottom: 20px;
+  } */
+}
+
+#VRbtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  /* height: "40px"; */
+  padding: 5px;
+  font-size: medium;
+
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: rgba(20, 150, 80, 1);
+  color: white;
+  text-align: "center";
+  opacity: "0.5";
+  outline: "none";
+  z-index: "999";
+  opacity: 0.5;
+}
+
+#VRbtn:hover {
+  font-size: large;
+  opacity: 1;
+  /* background-color: blueviolet; */
+}
