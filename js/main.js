@@ -53,6 +53,17 @@ stage.world = new InitialWorld(stage);
 stage.world.init();
 stage.start();
 
+// console.log(stage.world.elf)
+
+// const dancebtn = document.getElementById('dance');
+//  dancebtn.onclick = () => {
+//    stage.world.sound.play();
+//    console.log(stage.world.elf)
+//    stage.world.elf.animation.actions.current.play();
+//    dancebtn.style.display = 'none';
+//    container.requestFullscreen()
+//  };
+
 /**
  * world utility functions
  */

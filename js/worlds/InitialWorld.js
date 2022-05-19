@@ -4,8 +4,7 @@ import World from '../systems/World.js';
 import { createCubeTextureLoader } from '../systems/Loader.js';
 
 import ElfScene from '../scenery/ElfScene.js';
-import Heart from '../actors/Heart.js';
-import MySphere from '../props/MySphere.js';
+import Elf from '../actors/Elf.js';
 
 export default class InitialWorld extends World {
   constructor(stage) {
@@ -49,23 +48,42 @@ export default class InitialWorld extends World {
     const elfscene = new ElfScene();
     await elfscene.init();
 
-    const heart = new Heart();
-    await heart.init();
-    heart.model.position.y += 0.95;
-
-    const sphere = new MySphere();
-    await sphere.init();
-    sphere.model.position.x += 1;
-    sphere.model.position.y += 0.25;
-    sphere.model.castShadow = true;
+    const elf = new Elf();
+    await elf.init();
+    this.objectsToUpdate.push(elf);
 
     this.stage.scene.add(
-      sphere.model,
-      heart.model,
+      elf.model,
       elfscene.plane,
       elfscene.hemilight,
       elfscene.light
     );
+
+    // create an AudioListener and add it to the camera
+    const listener = new THREE.AudioListener();
+    this.stage.camera.add(listener);
+
+    // create a global audio source
+    this.sound = new THREE.Audio(listener);
+
+    // load a sound and set it as the Audio object's buffer
+    const audioLoader = new THREE.AudioLoader();
+    audioLoader.load('assets/audio/ElfThriller1.mp3', buffer => {
+      this.sound.setBuffer(buffer);
+      this.sound.setLoop(true);
+      this.sound.setVolume(0.5);
+      // this.sound.play();
+    });
+
+    const container = document.querySelector('#scene-container');
+    const dancebtn = document.getElementById('dance');
+    dancebtn.onclick = () => {
+      this.sound.play();
+      console.log(elf);
+      elf.animation.play('idle');
+      dancebtn.style.display = 'none';
+      container.requestFullscreen();
+    };
   }
 
   update(time) {

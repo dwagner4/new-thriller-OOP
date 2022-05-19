@@ -29,25 +29,24 @@ body {
 
 /* Style the links inside the navigation bar */
 .btn {
-  color: var(--main-bg-color);
+  color: black;
   text-align: left;
-  padding-bottom: 5px;
+  padding: 10px;
   width: 150px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 24px;
   font-weight:bold;
   opacity: 0.5;
-  border-bottom: 2px solid var(--main-bg-color);
-  /* border-style: solid;
-  border-width:5px;
-  border-radius: 10px; */
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 /* Change the color of links on hover */
 .btn:hover {
   opacity: 1;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 36px;
+  border: 5px solid black;
 }
 
 .hoverbtn {
@@ -86,10 +85,10 @@ body {
   border: 2px solid var(--primary-text-color);
 }
 
-#homebtn {
+#dance {
   position: fixed;
-  top: 50px;
-  left: 3%;
+  top: 65%;
+  left: 15%;
 }
 
 #nextbtn {
